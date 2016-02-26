@@ -1,7 +1,7 @@
 #Generates the sequence of moves to be performed
 #Reads the current faces from "fin.txt"
 
-import numpy as np#Fix numpy
+import numpy as np
 #1 - white, 2 - red, 3 - yellow, 4 - orange, 5 - blue, 6 - green
 #cube faces
 top = np.full((3,3),1)
