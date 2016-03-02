@@ -30,6 +30,16 @@ def F(): #Set the front face
 		bot[2][x] = ri[2][x]
 		ri[2][x] = swap[2][x]
 		x=x+1
+	#Rotating the front face
+	x=0
+	y=2
+	while(x<3): #Fix this
+		swap[0][x] = front[0][x]
+		front[0][x] = front[y][0]
+		front[2][x] = front[y][2]
+		front[y][2] = swap[0][x]
+		x=x+1
+		y=y-1
 	return
 
 def Fp(): #Set the front face
