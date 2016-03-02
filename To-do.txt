@@ -1,1 +1,1 @@
-1.Get numpy to work
+1. Fix the front part in f and fp.
