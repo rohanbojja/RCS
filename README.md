@@ -1,4 +1,4 @@
-# RCS
+#RCS
 Rubik's Cube Solver
 
 1. Read the faces from an image and generate "fin.txt" [in:in.jpeg out:fin.txt]
