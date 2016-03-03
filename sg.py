@@ -2,6 +2,7 @@
 #Reads the current faces from "fin.txt"
 import numpy as np
 #w - white, r - red, y - yellow, o - orange, b - blue, g - green
+#^ - a^
 #		ARRAY REPRESENTATION OF THE CUBE
 #		le^		top^			ri^
 #	[a][b][c]	[a][b][c]	[a][b][c]
@@ -11,6 +12,26 @@ import numpy as np
 #	[c][b][a]	[a][b][c]	[c][b][a]
 #	[f][e][d]	[d][e][f]	[f][e][b]
 #	[i][h][g]	[g][h][i]	[i][h][c]
+#
+#		CUBE RELATIONS
+#	bot[0][1] - back[2][1]	EDGE
+#	bot[1][0] - ri[1][2]	EDGE
+#	bot[1][2] - le[1][0]	EDGE
+#	bot[2][1] - front[2][1]	EDGE
+#
+#
+#
+#
+#
+#
+#	Rep when top is on top:
+#							top
+#					left	front	right	back
+#							bot
+#	Rep when top is on top:
+#							bot
+#					right	front	left	back	
+#							top
 
 swap = np.array([['a','b','c'], ['d','e','f'], ['a','b','c']]) #Temporary Array
 front = np.array([['y','r','o'], ['r','r','w'], ['y','r','g']])
@@ -24,8 +45,10 @@ back = np.array([['b','o','b'], ['w','o','y'], ['g','o','w']]) #This will have t
 #
 #
 #Predefined moves
+sequence=[]
 def F(): #Set the front face
 	"Rotate front by +90 deg."
+	sequence.append("F")
 	x=0
 	while(x<3):
 		swap[2][x]=top[2][x]
@@ -63,6 +86,7 @@ def F(): #Set the front face
 	
 def Fp(): #Set the front face
 	"Rotate front by -90 deg."
+	sequence.append("Fp")
 	x=0
 	while(x<3):
 		swap[2][x]=top[2][x]
@@ -71,7 +95,7 @@ def Fp(): #Set the front face
 		bot[2][x]=le[2][x]
 		le[2][x]=swap[2][x]
 		x=x+1
-	#Rotating the front face
+	#Rotating the front face -90 deg.
 	#CAN BE USED FOR ROTATING ANY FACE
 	#Fixed
 	x=0
@@ -96,6 +120,9 @@ def Fp(): #Set the front face
 		y2=y2-1
 		x1=x1+1
 	return
+#Cross check
+def cross_check():
+	if()
 #print all the faces
 def paf():
 	print "Top: "
@@ -116,11 +143,14 @@ def paf():
 #Solving part
 paf()
 #Cross on bot
+	#Generate Centers
 center_bot=bot[1][1]
-
+center_back=back[1][1]
+while(cross_check()):
+	
 #First layer
 #Second layer
-#Boom.
-F()
-Fp()
-paf()
+#Boom
+
+
+#Output Generation
