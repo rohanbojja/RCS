@@ -1,7 +1,7 @@
 #Generates the sequence of moves to be performed
 #Reads the current faces from "fin.txt"
 import numpy as np
-#1 - white, 2 - red, 3 - yellow, 4 - orange, 5 - blue, 6 - green
+#w - white, r - red, y - yellow, o - orange, b - blue, g - green
 #		ARRAY REPRESENTATION OF THE CUBE
 #		le^		top^			ri^
 #	[a][b][c]	[a][b][c]	[a][b][c]
@@ -12,13 +12,13 @@ import numpy as np
 #	[f][e][d]	[d][e][f]	[f][e][b]
 #	[i][h][g]	[g][h][i]	[i][h][c]
 
-swap = np.array([['a','b','c'], ['d','e','f'], ['g','h','i']])	#Temporary Array
-top = np.array([['a','b','c'], ['d','e','f'], ['a','b','c']])
-front = np.array([['a','b','c'], ['d','e','f'], ['g','h','i']])
-bot = np.array([['a','b','c'], ['d','e','f'], ['g','h','i']])
-back = np.array([['a','b','c'], ['d','e','f'], ['g','h','i']])
-ri = np.array([['a','b','c'], ['d','e','f'], ['d','e','f']])
-le = np.array([['a','b','c'], ['d','e','f'], ['j','k','l']])
+swap = np.array([['a','b','c'], ['d','e','f'], ['a','b','c']]) #Temporary Array
+front = np.array([['y','r','o'], ['r','r','w'], ['y','r','g']])
+top = np.array([['w','b','w'], ['g','b','g'], ['b','y','y']])
+le = np.array([['g','o','o'], ['y','w','r'], ['r','b','r']])
+bot = np.array([['w','g','o'], ['o','g','b'], ['o','w','g']])
+ri = np.array([['r','g','r'], ['y','y','w'], ['b','b','y']])
+back = np.array([['b','o','b'], ['w','o','y'], ['g','o','w']]) #This will have the cross
 #INITIALIZE THE CUBE HERE
 #
 #
@@ -115,6 +115,12 @@ def paf():
 	
 #Solving part
 paf()
+#Cross on bot
+center_bot=bot[1][1]
+
+#First layer
+#Second layer
+#Boom.
 F()
 Fp()
 paf()
