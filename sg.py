@@ -5,9 +5,9 @@ import numpy as np
 #1 - white, 2 - red, 3 - yellow, 4 - orange, 5 - blue, 6 - green
 #		ARRAY REPRESENTATION OF THE CUBE
 #		le->		top^		<-ri
-#	[g][d][a]	[a][b][c]	[a][d][g]
+#	[g][d][a]	[a][b][c]	[c][f][i]
 #	[h][e][b]	[d][e][f]	[b][e][h]
-#	[i][f][c]	[g][h][i]	[c][f][i]
+#	[i][f][c]	[g][h][i]	[a][d][g]
 #	 Bot->		front^ 		Back^
 #	[i][f][c]	[a][b][c]	[c][b][a]
 #	[h][e][b]	[d][e][f]	[f][e][b]
@@ -34,8 +34,8 @@ def F(): #Set the front face
 		swap[2][x] = top[2][x]
 		top[2][x] = le[x][2]#Fixed
 		le[x][2] = bot[2-x][0]#Fixed
-		bot[2][x] = ri[2][x]#BROKEN
-		ri[x][0] = swap[2][x]#POSSIBLY BROKEN
+		bot[2][x] = ri[2][x]#Fixed
+		ri[x][0] = swap[2][x]#Fixed
 		x=x+1
 	#Rotating the front face
 	#CAN BE USED FOR ROTATING ANY FACE
