@@ -1,45 +1,31 @@
 #Generates the sequence of moves to be performed
 #Reads the current faces from "fin.txt"
 import numpy as np
-#Initialize the cube
+#INITIALIZE THE CUBE HERE
 #1 - white, 2 - red, 3 - yellow, 4 - orange, 5 - blue, 6 - green
-#cube faces
-#		->			w^			<-
-#	[6][6][6]	[a][b][c]	[5][5][5]
-#	[6][6][6]	[d][e][f]	[5][5][5]
-#	[6][6][6]	[g][h][i]	[5][5][5]
-#		->			^ 			^
-#	[3][3][3]	[4][4][4]	[2][2][2]
-#	[3][3][3]	[4][4][4]	[2][2][2]
-#	[3][3][3]	[4][4][4]	[2][2][2]
-
 #		ARRAY REPRESENTATION OF THE CUBE
-#
-#				
-#
-#
-#				[a][b][c]
-#				[d][e][f]
-#				[g][h][i]
-#				
-#
-#
-#
-#
+#		le->		top^		<-ri
+#	[g][d][a]	[a][b][c]	[a][d][g]
+#	[h][e][b]	[d][e][f]	[b][e][h]
+#	[i][f][c]	[g][h][i]	[c][f][i]
+#	 Bot->		front^ 		Back^
+#	[i][f][c]	[a][b][c]	[c][b][a]
+#	[h][e][b]	[d][e][f]	[f][e][b]
+#	[g][d][a]	[g][h][i]	[i][h][c]
 
-swap = np.full((3,3),0)		#Temporary Array
+swap = np.array([['a','b','c'], ['d','e','f'], ['g','h','i']])	#Temporary Array
 #top = np.full((3,3),1)		#White	-	top
 #front = np.full((3,3),2)	#Red	-	Front
 #bot = np.full((3,3),3)		#Yellow	-	Bot
 #back = np.full((3,3),4)	#Orange	-	Back
 #ri = np.full((3,3),5)		#Blue	-	Right
 #le = np.full((3,3),6)		#Green	-	Left
-top = np.array([[1,2,3], [4,5,6], [7,8,9]])
-front = np.array([[1,2,3], [4,5,6], [7,8,9]])
-bot = np.array([[1,2,3], [4,5,6], [7,8,9]])
-back = np.array([[1,2,3], [4,5,6], [7,8,9]])
-ri = np.array([[1,2,3], [4,5,6], [7,8,9]])
-le = np.array([[1,2,3], [4,5,6], [7,8,9]])
+top = np.array([['a','b','c'], ['d','e','f'], ['g','h','i']])
+front = np.array([['a','b','c'], ['d','e','f'], ['g','h','i']])
+bot = np.array([['a','b','c'], ['d','e','f'], ['g','h','i']])
+back = np.array([['a','b','c'], ['d','e','f'], ['g','h','i']])
+ri = np.array([['a','b','c'], ['d','e','f'], ['g','h','i']])
+le = np.array([['a','b','c'], ['d','e','f'], ['g','h','i']])
 #Predefined moves
 def F(): #Set the front face
 	"Rotate front by 90 deg."
@@ -48,8 +34,8 @@ def F(): #Set the front face
 		swap[2][x] = top[2][x]
 		top[2][x] = le[x][2]#Fixed
 		le[x][2] = bot[2-x][0]#Fixed
-		bot[2][x] = ri[2][x]#Fixed
-		ri[x][0] = swap[2][x]#Fixed
+		bot[2][x] = ri[2][x]#BROKEN
+		ri[x][0] = swap[2][x]#POSSIBLY BROKEN
 		x=x+1
 	#Rotating the front face
 	#CAN BE USED FOR ROTATING ANY FACE
@@ -97,22 +83,22 @@ def Fp(): #Set the front face
 
 #print all the faces
 def paf():
-	#print top
-	#print
+	print "Top: "
+	print top
+	print "Front: "
 	print front
-	#print
-	#print bot
-	#print
-	#print back
-	#print
-	#print ri
-	#print
-	#print le
+	print "Bot: "
+	print bot
+	print "Back: "
+	print back
+	print "Right: "
+	print ri
+	print  "Left: "
+	print le
 	print"\n"*2
 	return
 	
 #Solving part
 paf()
 F()
-print swap
 paf()
