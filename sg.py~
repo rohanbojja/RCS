@@ -141,8 +141,7 @@ def paf():
 	return
 #Check edges for a color
 def fe( ec ):
-	if(top
-
+	return
 
 #Solving part
 paf()

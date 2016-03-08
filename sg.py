@@ -141,17 +141,13 @@ def paf():
 	return
 #Check edges for a color
 def fe( ec ):
-	if(top
-
+	return
 
 #Solving part
 paf()
 #Cross on bot
 	#Generate Centers
-center_bot=bot[1][1]
-center_back=back[1][1]
-while(cross_check()):
-	
+
 #First layer
 #Second layer
 #Boom
