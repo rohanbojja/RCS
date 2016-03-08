@@ -146,8 +146,7 @@ def fe( ec ):
 #Solving part
 paf()
 #Cross on bot
-	#Generate Centers
-
+#Generate Centers
 #First layer
 #Second layer
 #Boom
