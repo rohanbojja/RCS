@@ -37,9 +37,9 @@ swap = np.array([['a','b','c'], ['d','e','f'], ['a','b','c']]) #Temporary Array
 front = np.array([['y','r','o'], ['r','r','w'], ['y','r','g']])
 top = np.array([['w','b','w'], ['g','b','g'], ['b','y','y']])
 le = np.array([['g','o','o'], ['y','w','r'], ['r','b','r']])
-bot = np.array([['w','g','o'], ['o','g','b'], ['o','w','g']])
+bot = np.array([['w','g','o'], ['o','g','b'], ['o','w','g']]) #This will have the cross
 ri = np.array([['r','g','r'], ['y','y','w'], ['b','b','y']])
-back = np.array([['b','o','b'], ['w','o','y'], ['g','o','w']]) #This will have the cross
+back = np.array([['b','o','b'], ['w','o','y'], ['g','o','w']]) 
 #INITIALIZE THE CUBE HERE
 #
 #
