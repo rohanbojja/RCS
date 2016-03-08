@@ -122,7 +122,7 @@ def Fp(): #Set the front face
 	return
 #Cross check YET TO BE IMPLEMENTED
 def cross_check():
-	if()
+	return
 #print all the faces
 def paf():
 	print "Top: "
@@ -139,7 +139,11 @@ def paf():
 	print le
 	print"\n"*2
 	return
-	
+#Check edges for a color
+def fe( ec ):
+	if(top
+
+
 #Solving part
 paf()
 #Cross on bot
