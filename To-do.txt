@@ -1,3 +1,4 @@
 1. Get the servos to work properly.
 2. Get the DC motors to work.
 3. Fix the algorithm for generation of solution.
+4. Merge inter.py and grip.py
