@@ -4,10 +4,36 @@ import RPi.GPIO as GPIO
 import time
 #clk is the function for clockwise rotation of servo
 #aclk is for anti-clockwise rotation.Obviously.
-def clk(x):
+def clk(x,cur):
+    if(cur!=12.5):
+        x.ChangeDutyCycle(cur+5)
+        cur+=5
+    else:
+        #open gripper
+            x.ChangeDutyCycle(7.5)
+        #close gripper
+            x.ChangeDutyCycle(12.5)
+    return cur
+def aclk(x,cur):
+    if(cur!=2.5):
+        x.ChangeDutyCycle(cur-5)
+        cur-=5
+    else:
+        #open gripper
+            x.ChangeDutyCycle(7.5)
+        #close gripper
+            x.ChangeDutyCycle(2.5)
+    return cur
+def v(x):
+    #open gripper
+    x.ChangeDutyCycle(7.5)
+    #close gripper
+    return 7.5
+def h(x):
+    #open gripper
     x.ChangeDutyCycle(2.5)
-def aclk(x):
-    x.ChangeDutyCycle(12.5)
+    #close gripper
+    return 2.5
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(11,GPIO.OUT)#Servo 1
 GPIO.setup(13,GPIO.OUT)#Servo 2
@@ -28,31 +54,21 @@ str2=strl[::-1]#Reversed the List
 #Going through the list
 while(len(str2)):
     if(str2[0]=="R"):
-       if(cur!=7.5):
-            #open gripper
-            r.ChangeDutyCycle(7.5)
-            cur=7.5
-            #close gripper
-       clk(r)
-       cur+=5
+       if(cur1!=7.5):
+            cur1=v(d)
+       cur=clk(r,cur)
     if(str2[0]=="Rp"):
-         if(cur!=7.5):
-            r.ChangeDutyCycle(7.5)
-            cur=7.5 
-        aclk(r)
-        cur-=5
+         if(cur1!=7.5):
+            cur1=v(d) 
+        cur=aclk(r,cur)
     if(str2[0]=="L"):
-        if(cur!=7.5):
-            l.ChangeDutyCycle(7.5)
-            cur=7.5 
-        clk(l)
-        cur+=5
+       if(cur1!=7.5):
+            cur1=v(d)
+       cur=clk(l,cur)
     if(str2[0]=="Lp"):
-        if(cur!=7.5):
-            l.ChangeDutyCycle(7.5)
-            cur=7.5 
-        aclk(l)
-        cur-=5
+         if(cur1!=7.5):
+            cur1=v(d) 
+        cur=aclk(l,cur)
     if(str2[0]=="D"):
         if(cur!=7.5):
             d.ChangeDutyCycle(7.5)
