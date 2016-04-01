@@ -9,13 +9,13 @@ def clk(x):
 def aclk(x):
     x.ChangeDutyCycle(12.5)
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(11,GPIO.OUT)#Servo 1
-GPIO.setup(13,GPIO.OUT)#Servo 2
-GPIO.setup(15,GPIO.OUT)#Servo 3
-r=GPIO.PWM(11,50)
-d=GPIO.PWM(13,50)
-l=GPIO.PWM(15,50)
-r.start(7.5)
+GPIO.setup(11,GPIO.OUT)#Servo 1 Left
+GPIO.setup(13,GPIO.OUT)#Servo 2 Right
+GPIO.setup(15,GPIO.OUT)#Servo 3 Bot
+r=GPIO.PWM(11,50)#1
+d=GPIO.PWM(13,50)#2
+l=GPIO.PWM(15,50)#3
+r.start(7.5)#init all three
 d.start(7.5)
 l.start(7.5)
 cur=cur1=cur2=7.5
