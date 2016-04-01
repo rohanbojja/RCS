@@ -82,7 +82,6 @@ def F(): #Set the front face
 		y2=y2+1
 		x1=x1+1
 	return
-	return
 	
 def Fp(): #Set the front face
 	"Rotate front by -90 deg."
