@@ -37,6 +37,7 @@ strl=strin.split()#Converted to List
 str2=strl[::-1]#Reversed the List
 
 while(len(str2)):
+	#Functions
 	if(str2[0]=="R"):
 		clk(r)
 	elif(str2[0]=="L"):
@@ -49,6 +50,7 @@ while(len(str2)):
 		clk(t)
 	elif(str2[0]=="B"):
 		clk(b)
+	#Primes
 	elif(str2[0]=="R'"):
 		aclk(r)
 	elif(str2[0]=="L'"):
