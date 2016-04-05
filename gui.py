@@ -17,7 +17,7 @@ class App():
             row = []
             for j in range(0,3):
             	if i==1 and j==1:
-            		row.append(Button(self.root,width=2,height=1,bg="blue",activebackground="blue",command=lambda i=i,j=j :self.Click1(i, j)))
+            		row.append(Button(self.root,width=2,height=1,text="U",bg="blue",activebackground="blue",command=lambda i=i,j=j :self.Click1(i, j)))
                 	row[-1].grid(row=i,column=j+3)
                 else:
 		            row.append(Button(self.root,width=2,height=1,command=lambda i=i,j=j :self.Click1(i, j)))
@@ -27,16 +27,16 @@ class App():
             row1 = []
             for l in range(0,12):
 				if k==4 and l==1:
-					row1.append(Button(self.root,width=2,height=1,bg="orange",activebackground="orange",command=lambda k=k,l=l :self.Click1(k, l)))
+					row1.append(Button(self.root,width=2,height=1,text="L",bg="orange",activebackground="orange",command=lambda k=k,l=l :self.Click1(k, l)))
 					row1[-1].grid(row=k,column=l)
 				elif k==4 and l==4:
-					row1.append(Button(self.root,width=2,height=1,bg="white",activebackground="white",command=lambda k=k,l=l :self.Click1(k, l)))
+					row1.append(Button(self.root,width=2,height=1,text="F",bg="white",activebackground="white",command=lambda k=k,l=l :self.Click1(k, l)))
 					row1[-1].grid(row=k,column=l)
 				elif k==4 and l==7:
-					row1.append(Button(self.root,width=2,height=1,bg="red",activebackground="red",command=lambda k=k,l=l :self.Click1(k, l)))
+					row1.append(Button(self.root,width=2,height=1,text="R",bg="red",activebackground="red",command=lambda k=k,l=l :self.Click1(k, l)))
 					row1[-1].grid(row=k,column=l)
 				elif k==4 and l==10:
-					row1.append(Button(self.root,width=2,height=1,bg="yellow",activebackground="yellow",command=lambda k=k,l=l :self.Click1(k, l)))
+					row1.append(Button(self.root,width=2,height=1,text="B",bg="yellow",activebackground="yellow",command=lambda k=k,l=l :self.Click1(k, l)))
 					row1[-1].grid(row=k,column=l)
 				else:
 					row1.append(Button(self.root,width=2,height=1,command=lambda k=k,l=l :self.Click1(k, l)))
@@ -46,7 +46,7 @@ class App():
             row2 = []
             for n in range(0,3):
                 if m==7 and n==1:
-            		row2.append(Button(self.root,width=2,height=1,bg="green",activebackground="green",command=lambda m=m,n=n :self.Click1(m, n)))
+            		row2.append(Button(self.root,width=2,height=1,text="D",bg="green",activebackground="green",command=lambda m=m,n=n :self.Click1(m, n)))
                 	row2[-1].grid(row=m,column=n+3)
                 	c[1]+=1
                 	c[1]=c[1]%6
