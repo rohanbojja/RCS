@@ -1,3 +1,0 @@
-1.Hardware assembly
-2.rewrite solving algo
-3.Merge grip.py and arm.py
