@@ -2,20 +2,18 @@ import RPi.GPIO as GPIO
 import time
 
 def clk(x):
-	x.ChangeDutyCycle(12.5)
+	#Function here
 def aclk(x):
-    x.ChangeDutyCycle(2.5)
+    #Function here
     return cur
-def reset(x):
-	x.ChangeDutyCycle(7.5)
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(8,GPIO.OUT)#Servo 1 Right
-GPIO.setup(10,GPIO.OUT)#Servo 2 Left
-GPIO.setup(12,GPIO.OUT)#Servo 3 Down
-GPIO.setup(11,GPIO.OUT)#Servo 4 Front
-GPIO.setup(13,GPIO.OUT)#Servo 5 Top
-GPIO.setup(15,GPIO.OUT)#Servo 6 Back
+GPIO.setup(8,GPIO.OUT)#Stepper Motor 1 Right
+GPIO.setup(10,GPIO.OUT)#Stepper Motor 2 Left
+GPIO.setup(12,GPIO.OUT)#Stepper Motor 3 Down
+GPIO.setup(11,GPIO.OUT)#Stepper Motor 4 Front
+GPIO.setup(13,GPIO.OUT)#Stepper Motor 5 Top
+GPIO.setup(15,GPIO.OUT)#Stepper Motor 6 Back
 
 r=GPIO.PWM(8,50)
 l=GPIO.PWM(10,50)
