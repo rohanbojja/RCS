@@ -12,9 +12,9 @@ def aclk(x):
 def reset(x):
 	x.ChangeDutyCycle(7.5)
 #Uncomment the below functions
-def og(d):
+def og('d'):
 	#open gripper here
-def cg(d):
+def cg('d'):
 	#close gripper here
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(11,GPIO.OUT)#Servo 1 Right
@@ -36,58 +36,138 @@ str2=strl[::-1]#Reversed the List
 while(len(str2)):
     if(str2[0]=="R"):
 		clk(r)
-		og(r)
+		og('r')
 		reset(r)
-		cg(r)
+		cg('r')
 	if(str2[0]=="R'"):
 		aclk(r)
-		og(r)
+		og('r')
 		reset(r)
-		cg(r)
+		cg('r')
 	if(str2[0]=="L'"):
 		aclk(l)
-		og(l)
+		og('l')
 		reset(l)
-		cg(l)
+		cg('l')
 	if(str2[0]=="L"):
 		clk(l)
-		og(l)
+		og('l')
 		reset(l)
-		cg(l)
+		cg('l')
 		#
 	if(str2[0]=="D"):
-		og(l)
+		og('l')
 		clk(l)
-		cg(l)
-		og(r)
+		cg('l')
+		og('r')
 		clk(r)
-		cg(r)
+		cg('r')
 		clk(d)
-		og(d)
+		og('d')
 		reset(d)
-		cg(d)
-		og(l)
+		cg('d')
+		og('l')
 		reset(l)
-		cg(l)
-		og(r)
+		cg('l')
+		og('r')
 		reset(r)
-		cg(r)
+		cg('r')
 	if(str2[0]=="D'"):
-		og(l)
+		og('l')
 		clk(l)
-		cg(l)
-		og(r)
+		cg('l')
+		og('r')
 		clk(r)
-		cg(r)
+		cg('r')
 		aclk(d)
-		og(d)
+		og('d')
 		reset(d)
-		cg(d)
-		og(l)
+		cg('d')
+		og('l')
 		reset(l)
-		cg(l)
-		og(r)
+		cg('l')
+		og('r')
 		reset(r)
-		cg(r)
+		cg('r')
+	if(str2[0]=="F"):
+		og('d')
+		#Simultaenous rotation of both left(clk) and right(aclk) arms bitches
+		cg('d')
+		clk(d)
+		og('d')
+		reset(d)
+		#Simultaenous rotation of both left(aclk) and right(clk) arms bitches
+		cg('d')
+	if(str2[0]=="F'"):
+		og('d')
+		#Simultaenous rotation of both left(clk) and right(aclk) arms bitches
+		cg('d')
+		aclk(d)
+		og('d')
+		reset(d)
+		#Simultaenous rotation of both left(aclk) and right(clk) arms bitches
+		cg('d')
+	if(str2[0]=="U"):
+		og('d')
+		#Simultaenous rotation of both left(clk) and right(aclk) arms bitches
+		cg('d')
+		og('l')
+		og('r')
+		#Simultaenous rotation of both left(aclk) and right(clk) arms bitches
+		cg('l')
+		cg('r')
+		og('d')
+		#Simultaenous rotation of both left(clk) and right(aclk) arms bitches
+		clk(d)
+		og('d')
+		reset(d)
+		#Simultaenous rotation of both left(aclk) and right(clk) arms bitches
+		og('l')
+		og('r')
+		#Simultaenous rotation of both left(clk) and right(aclk) arms bitches
+		cg('l')
+		cg('r')
+		#Simultaenous rotation of both left(aclk) and right(clk) arms bitches
+		cg('d')
+	if(str2[0]=="U'"):
+		og('d')
+		#Simultaenous rotation of both left(clk) and right(aclk) arms bitches
+		cg('d')
+		og('l')
+		og('r')
+		#Simultaenous rotation of both left(aclk) and right(clk) arms bitches
+		cg('l')
+		cg('r')
+		og('d')
+		#Simultaenous rotation of both left(clk) and right(aclk) arms bitches
+		aclk(d)
+		og('d')
+		reset(d)
+		#Simultaenous rotation of both left(aclk) and right(clk) arms bitches
+		og('l')
+		og('r')
+		#Simultaenous rotation of both left(clk) and right(aclk) arms bitches
+		cg('l')
+		cg('r')
+		#Simultaenous rotation of both left(aclk) and right(clk) arms bitches
+		cg('d')
+	if(str2[0]=="B"):
+		og('d')
+		#Simultaenous rotation of both left(aclk) and right(clk) arms bitches
+		cg('d')
+		clk(d)
+		og('d')
+		reset(d)
+		#Simultaenous rotation of both left(clk) and right(aclk) arms bitches
+		cg('d')
+	if(str2[0]=="B'"):
+		og('d')
+		#Simultaenous rotation of both left(aclk) and right(clk) arms bitches
+		cg('d')
+		aclk(d)
+		og('d')
+		reset(d)
+		#Simultaenous rotation of both left(clk) and right(aclk) arms bitches
+		cg('d')
 	str2.pop()
 GPIO.cleanup()
