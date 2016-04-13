@@ -1,65 +1,50 @@
 import RPi.GPIO as GPIO
 import time
 
-def clk(x):
-	#Function here
-def aclk(x):
-    #Function here
-    return cur
+def clk:
+	#Stepper motor function here
+def aclk:
+    #Stepper motor function here
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(8,GPIO.OUT)#Stepper Motor 1 Right
-GPIO.setup(10,GPIO.OUT)#Stepper Motor 2 Left
-GPIO.setup(12,GPIO.OUT)#Stepper Motor 3 Down
-GPIO.setup(11,GPIO.OUT)#Stepper Motor 4 Front
-GPIO.setup(13,GPIO.OUT)#Stepper Motor 5 Top
-GPIO.setup(15,GPIO.OUT)#Stepper Motor 6 Back
-
-r=GPIO.PWM(8,50)
-l=GPIO.PWM(10,50)
-d=GPIO.PWM(12,50)
-f=GPIO.PWM(11,50)
-t=GPIO.PWM(13,50)
-b=GPIO.PWM(15,50)
-
-r.start(7.5)
-l.start(7.5)
-d.start(7.5)
-f.start(7.5)
-t.start(7.5)
-b.start(7.5)
-
+GPIO.setup(8,GPIO.OUT)#Stepper Motor
+GPIO.setup(10,GPIO.OUT)#Stepper Motor
+GPIO.setup(12,GPIO.OUT)#Stepper Motor
+GPIO.setup(11,GPIO.OUT)#Stepper Motor
+GPIO.setup(13,GPIO.OUT)#DeMux selector
+GPIO.setup(15,GPIO.out)#DeMux selector
 f = open("seqin.txt","r")
 strin=f.read()#The string
 strl=strin.split()#Converted to List
 str2=strl[::-1]#Reversed the List
 
+#Add selector pins appropriately
 while(len(str2)):
 	#Functions
 	if(str2[0]=="R"):
-		clk(r)
+		clk()
 	elif(str2[0]=="L"):
-		clk(l)
+		clk()
 	elif(str2[0]=="D"):
-		clk(d)
+		clk()
 	elif(str2[0]=="F"):
-		clk(f)
+		clk()
 	elif(str2[0]=="T"):
-		clk(t)
+		clk()
 	elif(str2[0]=="B"):
-		clk(b)
+		clk()
 	#Primes
 	elif(str2[0]=="R'"):
-		aclk(r)
+		aclk()
 	elif(str2[0]=="L'"):
-		aclk(l)
+		aclk()
 	elif(str2[0]=="D'"):
-		aclk(d)
+		aclk()
 	elif(str2[0]=="F'"):
-		aclk(f)
+		aclk()
 	elif(str2[0]=="T'"):
-		aclk(t)
+		aclk()
 	elif(str2[0]=="B'"):
-		aclk(b)	
+		aclk()	
 	str2.pop()
 GPIO.cleanup()
