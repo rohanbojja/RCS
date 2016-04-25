@@ -145,22 +145,22 @@ while(len(str2)):
                 sel(1,0,1)
 		clk(1)
 	#Primes
-	elif(str2[0]=="R"):
+	elif(str2[0]=="R'"):
                 sel(0,0,0)
 		aclk(0)
-	elif(str2[0]=="L"):
+	elif(str2[0]=="L'"):
                 sel(0,0,1)
 		aclk(0)
-	elif(str2[0]=="D"):
+	elif(str2[0]=="D'"):
                 sel(0,1,0)
 		aclk(1)
-	elif(str2[0]=="F"):
+	elif(str2[0]=="F'"):
                 sel(0,1,1)
 		aclk(1)
-	elif(str2[0]=="U"):
+	elif(str2[0]=="U'"):
                 sel(1,0,0)
 		aclk(1)
-	elif(str2[0]=="B"):
+	elif(str2[0]=="B'"):
                 sel(1,0,1)
 		aclk(1)	
 	str2.pop()
